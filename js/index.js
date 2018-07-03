@@ -44,7 +44,6 @@
 
 //global variables
 var list = document.getElementById('list')
-var li = document.createElement('li')
 var newArr = []
 
 function clear() {
@@ -53,10 +52,20 @@ function clear() {
   }
 }
 
+function render() {
+  for (var i = 0; i < newArr.length; i++) {
+    var li = document.createElement('li')
+    li.textContent = newArr[i]
+    list.appendChild(li)
+  }
+}
+
 document.getElementById('button').addEventListener('click', 
   function() {
     var input = document.getElementById('input') 
     newArr.push(input.value) 
+    clear()
+    render()
   }
 )
 
@@ -64,6 +73,7 @@ document.getElementById('button2').addEventListener('click',
   function() {
     newArr.sort()   
     clear()
+    render()
   }
 )
 
@@ -71,6 +81,7 @@ document.getElementById('button3').addEventListener('click',
   function() {
     newArr.pop()
     clear()
+    render()
   }
 )
 
@@ -78,13 +89,7 @@ document.getElementById('button4').addEventListener('click',
   function() {
     newArr.shift()
     clear()
+    render()
   }
 )
-
-function render() {
-  for (var i = 0; i < newArr.length; i++) {
-    li.textContent = newArr[i]
-    list.appendChild(li)
-  }
-}
 

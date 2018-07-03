@@ -16,7 +16,6 @@ for (i = 0; i < arr.length; i++) {
 
 // console.log(copied.reverse())
 
-
 var newArr = []
 
 for (var i = 0; i < arr.length; i++) {
@@ -33,4 +32,9 @@ var numArr = [12, 10, 45, 36, 88, 22]
 console.log(numArr.sort((a,b)=>a-b))
 console.log(numArr.sort((a,b)=>b-a))
 
-var threeItemStrArr = ['hello', 'yes', 'okay']
+var itemStrArr = ['hello', 'yes', 'okay']
+
+itemStrArr.push('what')
+itemStrArr.push('no')
+
+console.log(itemStrArr)

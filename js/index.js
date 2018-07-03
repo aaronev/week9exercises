@@ -42,10 +42,10 @@
 // itemStrArr.shift()
 // console.log(itemStrArr  )
 
-document.getElementById('button').addEventListener('click', 
+var newArr = []
 
+document.getElementById('button').addEventListener('click', 
   function() {
-    var newArr = []
     var input = document.getElementById('input')
     var li = document.createElement('li')
     var list = document.getElementById('list')
@@ -56,7 +56,65 @@ document.getElementById('button').addEventListener('click',
       li.textContent = newArr[i]
       list.appendChild(li)
     }
-
   }
-
 )
+
+document.getElementById('button2').addEventListener('click',
+  function() {
+    newArr.sort()
+    console.log(newArr)
+    
+    var list = document.getElementById('list')
+
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
+
+    console.log(newArr)
+
+    for ( i = 0; i < newArr.length; i++) {
+      var li = document.createElement('li')
+      li.textContent = newArr[i]
+      list.appendChild(li)
+    }
+  }
+)
+
+document.getElementById('button3').addEventListener('click',
+  function() {
+    newArr.pop()
+
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
+
+    console.log(newArr)
+
+    for ( i = 0; i < newArr.length; i++) {
+      var li = document.createElement('li')
+      li.textContent = newArr[i]
+      list.appendChild(li)
+    }
+  }
+)
+
+document.getElementById('button4').addEventListener('click', 
+
+  function() {
+    newArr.shift()
+
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
+
+    console.log(newArr)
+
+    for ( i = 0; i < newArr.length; i++) {
+      var li = document.createElement('li')
+      li.textContent = newArr[i]
+      list.appendChild(li)
+    }
+  }
+)
+
+

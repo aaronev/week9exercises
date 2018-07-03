@@ -42,62 +42,49 @@
 // itemStrArr.shift()
 // console.log(itemStrArr  )
 
+//global variables
+var list = document.getElementById('list')
+var li = document.createElement('li')
 var newArr = []
+
+function clear() {
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
+  }
+}
 
 document.getElementById('button').addEventListener('click', 
   function() {
-    var input = document.getElementById('input')
-    var li = document.createElement('li')
-    var list = document.getElementById('list')
-    newArr.push(input.value)
-    for ( i = 0 ; i < newArr.length; i++) {
-      li.textContent = newArr[i]
-      list.appendChild(li)
-    }
+    var input = document.getElementById('input') 
+    newArr.push(input.value) 
   }
 )
 
 document.getElementById('button2').addEventListener('click',
   function() {
     newArr.sort()   
-    var list = document.getElementById('list')
-    while (list.firstChild) {
-      list.removeChild(list.firstChild);
-    }
-    for ( i = 0; i < newArr.length; i++) {
-      var li = document.createElement('li')
-      li.textContent = newArr[i]
-      list.appendChild(li)
-    }
+    clear()
   }
 )
 
 document.getElementById('button3').addEventListener('click',
   function() {
     newArr.pop()
-    while (list.firstChild) {
-      list.removeChild(list.firstChild);
-    }
-    for ( i = 0; i < newArr.length; i++) {
-      var li = document.createElement('li')
-      li.textContent = newArr[i]
-      list.appendChild(li)
-    }
+    clear()
   }
 )
 
 document.getElementById('button4').addEventListener('click', 
   function() {
     newArr.shift()
-    while (list.firstChild) {
-      list.removeChild(list.firstChild);
-    }
-    for ( i = 0; i < newArr.length; i++) {
-      var li = document.createElement('li')
-      li.textContent = newArr[i]
-      list.appendChild(li)
-    }
+    clear()
   }
 )
 
+function render() {
+  for (var i = 0; i < newArr.length; i++) {
+    li.textContent = newArr[i]
+    list.appendChild(li)
+  }
+}
 

@@ -38,3 +38,6 @@ itemStrArr.push('what')
 itemStrArr.push('no')
 
 console.log(itemStrArr)
+
+itemStrArr.shift()
+console.log(itemStrArr)

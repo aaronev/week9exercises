@@ -12,8 +12,15 @@ for (i = 0; i < arr.length; i++) {
 
 //This is another way to reverse the array using a copied array
 
-var copied = arr.slice()
+// var copied = arr.slice()
 
-console.log(copied.reverse())
+// console.log(copied.reverse())
 
 
+var newArr = []
+
+for (var i = 0; i < arr.length; i++) {
+  newArr.push(arr[i])
+}
+
+console.log(newArr.reverse())

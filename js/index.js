@@ -26,3 +26,9 @@ for (var i = 0; i < arr.length; i++) {
 console.log(newArr.reverse())
 
 console.log(newArr.sort())
+
+
+var numArr = [12, 10, 45, 36, 88, 22]
+
+console.log(numArr.sort((a,b)=>a-b))
+console.log(numArr.sort((a,b)=>b-a))

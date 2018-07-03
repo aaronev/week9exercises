@@ -24,3 +24,5 @@ for (var i = 0; i < arr.length; i++) {
 }
 
 console.log(newArr.reverse())
+
+console.log(newArr.sort())

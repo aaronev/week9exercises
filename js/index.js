@@ -49,9 +49,7 @@ document.getElementById('button').addEventListener('click',
     var input = document.getElementById('input')
     var li = document.createElement('li')
     var list = document.getElementById('list')
-
     newArr.push(input.value)
-
     for ( i = 0 ; i < newArr.length; i++) {
       li.textContent = newArr[i]
       list.appendChild(li)
@@ -61,17 +59,11 @@ document.getElementById('button').addEventListener('click',
 
 document.getElementById('button2').addEventListener('click',
   function() {
-    newArr.sort()
-    console.log(newArr)
-    
+    newArr.sort()   
     var list = document.getElementById('list')
-
     while (list.firstChild) {
       list.removeChild(list.firstChild);
     }
-
-    console.log(newArr)
-
     for ( i = 0; i < newArr.length; i++) {
       var li = document.createElement('li')
       li.textContent = newArr[i]
@@ -83,13 +75,9 @@ document.getElementById('button2').addEventListener('click',
 document.getElementById('button3').addEventListener('click',
   function() {
     newArr.pop()
-
     while (list.firstChild) {
       list.removeChild(list.firstChild);
     }
-
-    console.log(newArr)
-
     for ( i = 0; i < newArr.length; i++) {
       var li = document.createElement('li')
       li.textContent = newArr[i]
@@ -99,16 +87,11 @@ document.getElementById('button3').addEventListener('click',
 )
 
 document.getElementById('button4').addEventListener('click', 
-
   function() {
     newArr.shift()
-
     while (list.firstChild) {
       list.removeChild(list.firstChild);
     }
-
-    console.log(newArr)
-
     for ( i = 0; i < newArr.length; i++) {
       var li = document.createElement('li')
       li.textContent = newArr[i]

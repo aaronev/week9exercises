@@ -32,3 +32,5 @@ var numArr = [12, 10, 45, 36, 88, 22]
 
 console.log(numArr.sort((a,b)=>a-b))
 console.log(numArr.sort((a,b)=>b-a))
+
+var threeItemStrArr = ['hello', 'yes', 'okay']

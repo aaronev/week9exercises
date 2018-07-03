@@ -42,17 +42,25 @@
 // itemStrArr.shift()
 // console.log(itemStrArr  )
 
+// =========================================================NUMBER 17 COMPLETED
+
 //global variables
+//Was told not do use global, but that's challnenging?!?!
+//my theory to doing that is to turn the global variables into an object function
+//within the object function will be a method that has a container array or use this (function())()
+
+
 var list = document.getElementById('list')
 var newArr = []
 
-function clear() {
+//helper functions
+function clearUL() {
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
 }
 
-function render() {
+function renderLI() {
   for (var i = 0; i < newArr.length; i++) {
     var li = document.createElement('li')
     li.textContent = newArr[i]
@@ -60,36 +68,37 @@ function render() {
   }
 }
 
+//event listeners  that does array methods: push, sort, pop, and shift
 document.getElementById('button').addEventListener('click', 
   function() {
     var input = document.getElementById('input') 
     newArr.push(input.value) 
-    clear()
-    render()
+    clearUL()
+    renderLI()
   }
 )
 
 document.getElementById('button2').addEventListener('click',
   function() {
     newArr.sort()   
-    clear()
-    render()
+    clearUL()
+    renderLI()
   }
 )
 
 document.getElementById('button3').addEventListener('click',
   function() {
     newArr.pop()
-    clear()
-    render()
+    clearUL()
+    renderLI()
   }
 )
 
 document.getElementById('button4').addEventListener('click', 
   function() {
     newArr.shift()
-    clear()
-    render()
+    clearUL()
+    renderLI()
   }
 )
 

@@ -42,4 +42,21 @@
 // itemStrArr.shift()
 // console.log(itemStrArr  )
 
-var newArr = []
+document.getElementById('button').addEventListener('click', 
+
+  function() {
+    var newArr = []
+    var input = document.getElementById('input')
+    var li = document.createElement('li')
+    var list = document.getElementById('list')
+
+    newArr.push(input.value)
+
+    for ( i = 0 ; i < newArr.length; i++) {
+      li.textContent = newArr[i]
+      list.appendChild(li)
+    }
+
+  }
+
+)

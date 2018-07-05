@@ -49,56 +49,59 @@
 //my theory to doing that is to turn the global variables into an object function
 //within the object function will be a method that has a container array or use this (function())()
 
+//turn into constructor objects with methods to remove global varialbles
+function list() {
+  this.items = []
+  this.UL = document.getElementById('list')
+}
 
-var list = document.getElementById('list')
-var newArr = []
-
-//helper functions
-function clearUL() {
-  while (list.firstChild) {
-    list.removeChild(list.firstChild);
+list.prototype.clearUL = function() {
+  while (this.UL.firstChild) {
+    this.UL.removeChild(this.UL.firstChild);
   }
 }
 
-function renderLI() {
-  for (var i = 0; i < newArr.length; i++) {
+list.prototype.renderList = function() {
+  for (var i = 0; i < this.items.length; i++) {
     var li = document.createElement('li')
-    li.textContent = newArr[i]
-    list.appendChild(li)
+    li.textContent = this.items[i]
+    this.UL.appendChild(li)
   }
 }
+
+var aList = new list()
 
 //event listeners  that does array methods: push, sort, pop, and shift
 document.getElementById('button').addEventListener('click', 
   function() {
     var input = document.getElementById('input') 
-    newArr.push(input.value) 
-    clearUL()
-    renderLI()
+    aList.items.push(input.value) 
+    aList.clearUL()
+    aList.renderList()
   }
 )
 
 document.getElementById('button2').addEventListener('click',
   function() {
-    newArr.sort()   
-    clearUL()
-    renderLI()
+    aList.items.sort()
+    aList.clearUL()
+    aList.renderList()
   }
 )
 
 document.getElementById('button3').addEventListener('click',
   function() {
-    newArr.pop()
-    clearUL()
-    renderLI()
+    aList.items.pop()
+    aList.clearUL()
+    aList.renderList()
   }
 )
 
 document.getElementById('button4').addEventListener('click', 
   function() {
-    newArr.shift()
-    clearUL()
-    renderLI()
+    aList.items.shift()
+    aList.clearUL()
+    aList.renderList()
   }
 )
 

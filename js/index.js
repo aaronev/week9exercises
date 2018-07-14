@@ -50,15 +50,14 @@
 //within the object function will be a method that has a container array or use this (function())()
 
 //turn into constructor objects with methods to remove global varialbles
+
 function list() {
   this.items = []
   this.UL = document.getElementById('list')
 }
 
 list.prototype.clearUL = function() {
-  while (this.UL.firstChild) {
-    this.UL.removeChild(this.UL.firstChild);
-  }
+  this.UL.innerHTML = ""
 }
 
 list.prototype.renderList = function() {
@@ -75,9 +74,12 @@ var aList = new list()
 document.getElementById('button').addEventListener('click', 
   function() {
     var input = document.getElementById('input') 
-    aList.items.push(input.value) 
-    aList.clearUL()
-    aList.renderList()
+    //prevents default with our form
+    if (input.value) {
+      aList.items.push(input.value) 
+      aList.clearUL()
+      aList.renderList()
+    }
   }
 )
 
